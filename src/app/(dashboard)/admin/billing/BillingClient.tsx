@@ -108,7 +108,8 @@ export default function BillingClient() {
       </div>
 
       <div className="bg-white rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-[#E2E8F0] overflow-hidden">
-        <Table>
+        <div className="overflow-x-auto">
+        <Table className="min-w-[600px]">
           <TableHeader className="bg-[#0F2044] hover:bg-[#0F2044]">
             <TableRow className="border-b-0 hover:bg-[#0F2044]">
               <TableHead className="font-medium text-white h-12">Empresa Cliente</TableHead>
@@ -138,10 +139,11 @@ export default function BillingClient() {
             )}
           </TableBody>
         </Table>
+        </div>
       </div>
 
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="max-w-3xl max-h-[85vh] flex flex-col p-0 overflow-hidden">
+        <DialogContent className="w-[95vw] max-w-3xl max-h-[85vh] flex flex-col p-0 overflow-hidden">
            <DialogHeader className="px-6 py-4 border-b border-[#E2E8F0] bg-[#F8F9FB]">
              <DialogTitle className="text-xl text-[#0F2044] flex justify-between items-center pr-6">
                 <span>Estado de Cuenta: <span className="text-[#2C6E9E]">{selectedCompany?.name}</span></span>
@@ -151,9 +153,10 @@ export default function BillingClient() {
              </DialogTitle>
            </DialogHeader>
            
-           <div className="flex-1 overflow-auto bg-white p-6">
+           <div className="flex-1 overflow-auto bg-white p-4 sm:p-6">
               <div className="border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-                 <Table>
+                 <div className="overflow-x-auto">
+                 <Table className="min-w-[550px]">
                     <TableHeader className="bg-[#0F2044] hover:bg-[#0F2044]">
                       <TableRow className="border-b-0 hover:bg-[#0F2044]">
                          <TableHead className="font-medium text-white h-10">Empleado / Paciente</TableHead>
@@ -185,7 +188,8 @@ export default function BillingClient() {
                          <TableRow><TableCell colSpan={4} className="text-center py-8 text-slate-500">Ningún empleado agendado de esta empresa.</TableCell></TableRow>
                       )}
                     </TableBody>
-                 </Table>
+                  </Table>
+                 </div>
               </div>
            </div>
            

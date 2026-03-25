@@ -100,16 +100,16 @@ export default function DoctorDashboardClient({ initialCompanies, initialExams }
       </div>
       
       {/* Filters */}
-      <div className="flex flex-wrap gap-4 bg-white p-5 rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-[#E2E8F0] items-end">
-         <div className="space-y-1.5">
+      <div className="flex flex-wrap gap-3 sm:gap-4 bg-white p-4 sm:p-5 rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-[#E2E8F0] items-end">
+         <div className="space-y-1.5 w-full sm:w-auto">
             <Label className="text-[#0F2044] font-medium">Fecha de Cita</Label>
             <Input type="date" value={date} onChange={e => setDate(e.target.value)} className="border-[#CBD5E1] focus-visible:ring-[#2C6E9E] focus-visible:ring-1 focus-visible:ring-offset-0 shadow-none"/>
          </div>
-         <div className="space-y-1.5 flex-1 min-w-[200px]">
+         <div className="space-y-1.5 flex-1 min-w-0 sm:min-w-[200px]">
             <Label className="text-[#0F2044] font-medium">Buscar Paciente</Label>
             <Input placeholder="Escribe un nombre..." value={search} onChange={e => setSearch(e.target.value)} className="border-[#CBD5E1] focus-visible:ring-[#2C6E9E] focus-visible:ring-1 focus-visible:ring-offset-0 shadow-none" />
          </div>
-         <div className="space-y-1.5 min-w-[180px]">
+         <div className="space-y-1.5 w-[calc(50%-6px)] sm:w-auto sm:min-w-[180px]">
             <Label className="text-[#0F2044] font-medium">Empresa</Label>
             <select className="flex h-10 w-full rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2C6E9E] shadow-none text-slate-700" 
                     value={compFilter} onChange={e => setCompFilter(e.target.value)}>
@@ -117,7 +117,7 @@ export default function DoctorDashboardClient({ initialCompanies, initialExams }
                {initialCompanies.map((c: any) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>
          </div>
-         <div className="space-y-1.5 min-w-[180px]">
+         <div className="space-y-1.5 w-[calc(50%-6px)] sm:w-auto sm:min-w-[180px]">
             <Label className="text-[#0F2044] font-medium">Estado</Label>
             <select className="flex h-10 w-full rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#2C6E9E] shadow-none text-slate-700" 
                     value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
@@ -129,7 +129,8 @@ export default function DoctorDashboardClient({ initialCompanies, initialExams }
 
       {/* Table */}
       <div className="bg-white rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-[#E2E8F0] overflow-hidden">
-        <Table>
+        <div className="overflow-x-auto">
+        <Table className="min-w-[600px]">
           <TableHeader className="bg-[#0F2044] hover:bg-[#0F2044]">
             <TableRow className="border-b-0 hover:bg-[#0F2044]">
               <TableHead className="font-medium text-white h-12">Nombre Completo</TableHead>
@@ -167,6 +168,7 @@ export default function DoctorDashboardClient({ initialCompanies, initialExams }
             )}
           </TableBody>
         </Table>
+        </div>
       </div>
 
       {/* Modal Checklist */}

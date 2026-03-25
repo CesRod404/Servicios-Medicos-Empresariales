@@ -126,7 +126,8 @@ export default function PatientsClient({ initialCompanies }: any) {
       </div>
 
       <div className="bg-white rounded-xl shadow-[0_1px_4px_rgba(0,0,0,0.06)] border border-[#E2E8F0] overflow-hidden">
-        <Table>
+        <div className="overflow-x-auto">
+        <Table className="min-w-[700px]">
           <TableHeader className="bg-[#0F2044] hover:bg-[#0F2044]">
             <TableRow className="border-b-0 hover:bg-[#0F2044]">
               <TableHead className="font-medium text-white h-12">Nombre Completo</TableHead>
@@ -159,6 +160,7 @@ export default function PatientsClient({ initialCompanies }: any) {
             )}
           </TableBody>
         </Table>
+        </div>
       </div>
 
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
