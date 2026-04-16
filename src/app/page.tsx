@@ -78,7 +78,7 @@ export default function Home() {
               <div className="group relative rounded-2xl overflow-hidden aspect-[5/4] sm:aspect-[4/5] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000&auto=format&fit=crop')` }}
+                  style={{ backgroundImage: `url('/images/doping.jpg')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F2044]/95 via-[#0F2044]/60 to-transparent" />
 
